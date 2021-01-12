@@ -1,0 +1,52 @@
+﻿@page "/Locations/index"
+@model CoronaWarn.Pages.Locations.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, CoronaWarn
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/bootstrap/bootstrap.min.css" />
+
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Location[0].Bezeichnung)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location[0].Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Location)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bezeichnung)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

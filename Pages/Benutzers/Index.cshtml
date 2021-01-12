@@ -1,0 +1,114 @@
+﻿@page "/Benutzers/index"
+@model CoronaWarn.Pages.Benutzers.IndexModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, CoronaWarn
+
+
+@{
+    ViewData["Title"] = "Index";
+
+    //Layout = "_Layout";
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/bootstrap/bootstrap.min.css" />
+
+<!--Wie zum Fick bekomm ich die Navbar rein, siehe auch oben Layout = ....-->
+@*<div class="sidebar">
+    <NavMenu />
+</div>*@
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Benutzer[0].Vorname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Benutzer[0].Nachname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Benutzer[0].GebDat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Benutzer[0].Straße)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Benutzer[0].Hausnummer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Benutzer[0].Ort)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Benutzer[0].Plz)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Benutzer[0].Positiv)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Benutzer[0].Seit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Benutzer[0].Bis)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Benutzer[0].Email)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Benutzer)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Vorname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nachname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GebDat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Straße)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hausnummer)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ort)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Plz)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Positiv)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Seit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bis)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

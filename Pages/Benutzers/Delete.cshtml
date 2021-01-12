@@ -1,0 +1,96 @@
+﻿@page
+@model CoronaWarn.Pages.Benutzers.DeleteModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, CoronaWarn
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-grid.css" />
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap-reboot.css" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="stylesheet" href="~/css/bootstrap/bootstrap.min.css" />
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Benutzer</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Benutzer.Vorname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Benutzer.Vorname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Benutzer.Nachname)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Benutzer.Nachname)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Benutzer.GebDat)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Benutzer.GebDat)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Benutzer.Straße)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Benutzer.Straße)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Benutzer.Hausnummer)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Benutzer.Hausnummer)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Benutzer.Ort)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Benutzer.Ort)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Benutzer.Plz)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Benutzer.Plz)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Benutzer.Positiv)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Benutzer.Positiv)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Benutzer.Seit)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Benutzer.Seit)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Benutzer.Bis)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Benutzer.Bis)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Benutzer.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Benutzer.Email)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Benutzer.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
